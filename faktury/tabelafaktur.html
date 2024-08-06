@@ -1,0 +1,230 @@
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8">
+ 
+</head>
+<body>
+<body bgcolor="#66ccff">
+<br><br>
+<center>
+<H1>Tabela Faktur<H1>
+<style>
+
+table
+
+{
+width: 1000px; 
+
+height: 300px;
+
+border-style:solid;
+
+border-width:9px;
+
+border-color:blue;
+
+background-color:#e0f7fa;
+
+text-align: center;
+
+text-border: 60;
+
+font-weight: 200px;
+}
+
+</style>	
+<table border='1' id="tablica">
+   <tr style= 'background-color:#d2d2d2'>
+   <th>Lp</th>
+   <th>Opis</th>
+   <th>MPK</th>
+   <th>Kwota Netto</th>
+   <th>Ilość</th>
+   <th>VAT</th>
+   <th>Kwota Brutto</th>
+   <th>Wartość Netto</th>
+   <th>Wartość Brutto</th>
+   
+   </tr>
+   <tr id="1">
+   <td>1</td>
+   <td>3xbiurko model biznes</td>
+   <td>Placówka A</td>
+   <td><input type="text" id="kwotanetto1" value="300" onchange="funkcja(listavat)"/></td>
+   <td><input type="text"  id="ilosc1" value="3" onchange="funkcja(listavat)"/></td>
+   <td><select id="vat1" onchange="funkcja(listavat)">
+		<option value="ZW">ZW</option>
+		<option value="NP.">NP.</option>
+		<option value="0%">0%</option>
+		<option value="3%">3%</option>
+		<option value="8%">8%</option>
+		<option value="23%">23%</option></td>
+    <td ><div id="kwotabrutto1" >300</div></td>
+    <td ><div id="wartoscnetto1" >900</div></td>
+    <td ><div id="wartoscbrutto1" >900</div></td>
+
+   </tr >
+   <tr id="2">
+   <td>2</td>
+   <td>1xczajnik elektryczny</td>
+   <td>Placówka B</td>
+   <td><input type="text" id="kwotanetto2" value="100" onchange="funkcja1(listavat)"/></td>
+   <td><input type="text"  id="ilosc2" value="1" onchange="funkcja1(listavat)" /></td>
+   <td><select id="vat2" onchange="funkcja1(listavat)">
+		<option value="ZW">ZW</option>
+		<option value="NP.">NP.</option>
+		<option value="0%">0%</option>
+		<option value="3%">3%</option>
+		<option value="8%">8%</option>
+		<option value="23%">23%</option></td>
+  <td ><div id="kwotabrutto2" >100</div></td>
+  <td ><div id="wartoscnetto2" >100</div></td>
+  <td ><div id="wartoscbrutto2" >100</div></td>
+   </tr>
+   <tr id="3">
+   <td>3</td>
+   <td>2xkrzesła biurowe</td>
+   <td>Placówka C</td>
+   <td><input type="text" id="kwotanetto3" value="200" onchange="funkcja2(listavat)"/></td>
+   <td><input type="text"  id="ilosc3" value="2" onchange="funkcja2(listavat)" /></td>
+   <td><select id="vat3" onchange="funkcja2(listavat)">
+		<option value="ZW">ZW</option>
+		<option value="NP.">NP.</option>
+		<option value="0%">0%</option>
+		<option value="3%">3%</option>
+		<option value="8%">8%</option>
+		<option value="23%">23%</option></td>
+  <td ><div id="kwotabrutto3" >200</div></td>
+  <td ><div id="wartoscnetto3" >400</div></td>
+  <td ><div id="wartoscbrutto3" >400</div></td>
+   </tr>
+   <tr id="4">
+   <td>4</td>
+   <td>4xkomputery PC</td>
+   <td>Placówka D</td>
+   <td><input type="text" id="kwotanetto4" value="5000" onchange="funkcja3(listavat)"/></td>
+   <td><input type="text"  id="ilosc4" value="4" onchange="funkcja3(listavat)" /></td>
+   <td><select id="vat4" onchange="funkcja3(listavat)">
+		<option value="ZW">ZW</option>
+		<option value="NP.">NP.</option>
+		<option value="0%">0%</option>
+		<option value="3%">3%</option>
+		<option value="8%">8%</option>
+		<option value="23%">23%</option></td>
+  <td ><div id="kwotabrutto4" >5000</div></td>
+  <td ><div id="wartoscnetto4" >20000</div></td>
+  <td ><div id="wartoscbrutto4" >20000</div></td>
+ 
+   </tr>
+   <tr id="5">
+   <td>5</td>
+   <td>5xmonitor DELL</td>
+   <td>Placówka E</td>
+   <td><input type="text" id="kwotanetto5" value="3000" onchange="funkcja4(listavat)"/></td>
+   <td><input type="text"  id="ilosc5" value="5" onchange="funkcja4(listavat)" /></td>
+   <td><select id="vat5" onchange="funkcja4(listavat)">
+		<option value="ZW">ZW</option>
+		<option value="NP.">NP.</option>
+		<option value="0%">0%</option>
+		<option value="3%">3%</option>
+		<option value="8%">8%</option>
+		<option value="23%">23%</option></td>
+  <td ><div id="kwotabrutto5" >3000</div></td>
+  <td ><div id="wartoscnetto5" >15000</div></td>
+  <td ><div id="wartoscbrutto5" >15000</div></td>
+  
+   </tr>
+</table><br>
+
+<button type="button" Onclick="kolor()">Powyżej 1000,00 zł Netto</button>
+
+<script type="text/javascript" >
+var listavat = new Array();
+listavat["ZW"] = 1;
+listavat["NP."] = 1;
+listavat["0%"] = 1;
+listavat["3%"] = 0.97;
+listavat["8%"] = 0.92;
+listavat["23%"] = 0.77;
+function funkcja(listavat){
+       
+   var asd = document.getElementById('vat1').options[document.getElementById('vat1').selectedIndex].value;
+   var x = document.getElementById("kwotanetto1").value;
+   var y = document.getElementById("ilosc1").value;
+   var numvat = listavat[asd];
+   if ( x > -1 && y > 0)
+   {
+
+	  document.getElementById("kwotabrutto1").innerHTML = x*numvat;
+	  document.getElementById("wartoscnetto1").innerHTML= x*y*numvat;
+	  document.getElementById("wartoscbrutto1").innerHTML= x*y*numvat;
+   }
+
+}
+function funkcja1(listavat){
+      var asd2 = document.getElementById('vat2').options[document.getElementById('vat2').selectedIndex].value;
+      var a = document.getElementById("kwotanetto2").value;
+	  var b = document.getElementById("ilosc2").value;
+	  var numvat = listavat[asd2];
+	  if ( a > -1 && b > 0)
+      {
+
+        document.getElementById("kwotabrutto2").innerHTML = a*numvat;
+		document.getElementById("wartoscnetto2").innerHTML= a*b*numvat;
+		document.getElementById("wartoscbrutto2").innerHTML= a*b*numvat;
+      }
+}
+function funkcja2(listavat){
+      var asd3 = document.getElementById('vat3').options[document.getElementById('vat3').selectedIndex].value;
+      var c = document.getElementById("kwotanetto3").value;
+	  var d = document.getElementById("ilosc3").value;
+	  var numvat = listavat[asd3];
+	  if ( c > -1 && d > 0)
+      {
+
+        document.getElementById("kwotabrutto3").innerHTML = c*numvat;
+		document.getElementById("wartoscnetto3").innerHTML= c*d*numvat;
+		document.getElementById("wartoscbrutto3").innerHTML= c*d*numvat;
+      }
+}
+function funkcja3(listavat){
+      var asd4 = document.getElementById('vat4').options[document.getElementById('vat4').selectedIndex].value;
+      var f = document.getElementById("kwotanetto4").value;
+	  var g = document.getElementById("ilosc4").value;
+	  var numvat = listavat[asd4];
+	  if (f > -1 && g > 0)
+      {
+
+        document.getElementById("kwotabrutto4").innerHTML = f*numvat;
+		document.getElementById("wartoscnetto4").innerHTML= f*g*numvat;
+		document.getElementById("wartoscbrutto4").innerHTML= f*g*numvat;
+      }
+
+}
+function funkcja4(listavat){
+      var asd5 = document.getElementById('vat5').options[document.getElementById('vat5').selectedIndex].value;
+      var h = document.getElementById("kwotanetto5").value;
+	  var i = document.getElementById("ilosc5").value;
+	  var numvat = listavat[asd5];
+	  if (h > -1 && i > 0)
+      {
+
+        document.getElementById("kwotabrutto5").innerHTML = h*numvat;
+		document.getElementById("wartoscnetto5").innerHTML= h*i*numvat;
+		document.getElementById("wartoscbrutto5").innerHTML= h*i*numvat;
+      }
+}
+function kolor(){
+  var rows = document.getElementById("tablica").rows.length;
+  for (let i = 1; i <  rows; i++) {
+    document.getElementById(i).style.backgroundColor=""
+    var kwota = document.getElementById("kwotanetto"+i).value;
+    if (kwota > 1000)
+	{
+	  document.getElementById(i).style.backgroundColor="green";
+	}
+  }
+}
+ </script>
+</center>
+</body>
+</html>
