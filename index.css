@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+.responsive-iframe {
+  float:right;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+#lewy
+{
+  float:left;
+  border: 6px #0099CC solid;
+  background-color:#ccccff;
+  font-size:45px;
+  width: 25%;
+  height: 100%;
+}
+#prawy
+{
+  float:right;
+  border: 3px #0099CC solid;
+  background-color:#00CCFF;
+  width: 75%;
+  height: 100%;
+}
+#temat
+{
+  font-size:80px;
+}
+
+a:link {color: blue;}
+a:visited {color: green;}
+a:active {color: red;}
