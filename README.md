@@ -1,1 +1,1 @@
-# strona-firmowa
+# Projekt na rekrutacje w E-MSI
