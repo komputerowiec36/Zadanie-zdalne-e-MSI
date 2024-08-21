@@ -1,6 +1,6 @@
 <head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
- <script type="text/javascript" src="script.js"> </script>
+ 
 </head>
 <body bgcolor="pink">
 <br><br>
@@ -37,11 +37,11 @@ font-weight: 200px;
 <div class="colors-picker">
  <div>
   <label for="color_even">Kolor 1:</label>
-  <input type="color" id="color_odd" value="#dddddd" />
+  <input type="color" id="color_odd" value="#dddddd"/>
  </div>
  <div>
   <label for="color_odd">Kolor 2:</label>
-  <input type="color" id="color_even" value="#999999" />
+  <input type="color" id="color_even" value="#999999"/>
  </div>
 </div>
 
@@ -106,6 +106,29 @@ font-weight: 200px;
    </tr>
 </table>
 </center>
+<script type="text/javascript" >
+window.onload = pageLoaded;
  
+function pageLoaded() {
+  const input_colors_picker = document.querySelectorAll('input[type="color"]');
+ 
+  input_colors_picker.forEach((input_color) => {
+    input_color.addEventListener('input', setRowBackgroundColor);
+  });
+ 
+  input_colors_picker[0].dispatchEvent(new Event('input', null));
+
+  input_colors_picker[1].dispatchEvent(new Event('input', null));
+}
+
+function setRowBackgroundColor(e) {
+  const type_row = (e.target.id === 'color_even') ? 'even' : 'odd';
+  const tr_rows = document.querySelectorAll(`tbody tr:nth-child(${type_row})`);
+  tr_rows.forEach((tr_row) => {
+    tr_row.style.backgroundColor = e.target.value;
+  });  
+}
+
+</script>
 </body>
 </html>
