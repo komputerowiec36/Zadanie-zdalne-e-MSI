@@ -51,9 +51,6 @@ font-weight: 200px;
 </style>	
 <H1>Dane Kontrahentów<H1>
 <?php
-$i = 1;
-While($i == 1)
-{
 	$con = mysqli_connect("localhost","root","serwer12345*","firma");
 
 	if (!$con)
@@ -117,7 +114,7 @@ While($i == 1)
 	 
 
 
-}
+
 ?>
 <br>
 <br>
@@ -135,14 +132,14 @@ While($i == 1)
    <th>Numer Domu </th>
    <th>Numer Mieszkania </th> 
    </tr>
-   <tr>   
+   <tr>
    <td><input type="textbox" name="NIP" value=""></td> 
-   <td><input type="inherit" name="REGON" value=""></td>
-   <td><input type="text" name="Nazwa" value=""></td>
+   <td><input type="textbox" name="REGON" value=""></td>
+   <td><input type="textbox" name="Nazwa" value=""></td>
    <td><input type="checkbox" name="Czyplatnikvat" value=""></td>
-   <td><input type="text" name="Ulica" value=""></td>
-   <td><input type="text" name="Numerdomu" value=""></td>
-   <td><input type="text" name="Numermieszkania" value=""></td>
+   <td><input type="textbox" name="Ulica" value=""></td>
+   <td><input type="textbox" name="Numerdomu" value=""></td>
+   <td><input type="textbox" name="Numermieszkania" value=""></td>
    </tr>
    <tr>
    <td colspan="7" style='height:80px'>
@@ -212,7 +209,7 @@ if (isset($_POST['edytuj']))
    }
    if ($Czyplatnikvat == 1)
    {
-     mysqli_query($sq,"Update kontrahenci SET NIP='$NIP', REGON='$REGON', NAZWA='$Nazwa', CZYPŁATNIKVAT='Tak', ULICA='$Ulica', NUMERDOMU='$Numerdomu', NUMERMIESZKANIA='$Numermieszkania' Where NIP='$NIP' || REGON='$REGON' || NAZWA='$Nazwa'|| CZYPŁATNIKVAT='Tak' || ULICA='$Ulica' || NUMERDOMU='$Numerdomu' || NUMERMIESZKANIA='$Numermieszkania' ;");
+     mysqli_query($sq,"Update kontrahenci SET NIP='$NIP', REGON='$REGON', NAZWA='$Nazwa', CZYPŁATNIKVAT='Tak', ULICA='$Ulica', NUMERDOMU='$Numerdomu', NUMERMIESZKANIA='$Numermieszkania' Where NIP='$NIP' || REGON='$REGON' || NAZWA='$Nazwa'|| CZYPŁATNIKVAT='Tak' && ULICA='$Ulica' || NUMERDOMU='$Numerdomu' || NUMERMIESZKANIA='$Numermieszkania' ;");
    }
    if ($Czyplatnikvat != 1)
    {
@@ -244,11 +241,11 @@ if (isset($_POST['usun']))
    }
    if ($Czyplatnikvat == 1)
    {
-     mysqli_query($sq,"Update kontrahenci SET  NAZWA='$Nazwa' Where NIP='$NIP' && REGON='$REGON' && CZYPŁATNIKVAT='Tak' && ULICA='$Ulica' && NUMERDOMU='$Numerdomu' && NUMERMIESZKANIA='$Numermieszkania' ;");
+     mysqli_query($sq,"Update kontrahenci SET  NAZWA='Usunięty' Where NIP='$NIP' && REGON='$REGON' && CZYPŁATNIKVAT='Tak' && ULICA='$Ulica' && NUMERDOMU='$Numerdomu' && NUMERMIESZKANIA='$Numermieszkania' ;");
    }
    if ($Czyplatnikvat != 1)
    {
-	 mysqli_query($sq,"Update kontrahenci SET NAZWA='$Nazwa' Where NIP='$NIP' && REGON='$REGON' && CZYPŁATNIKVAT='Nie' && ULICA='$Ulica' && NUMERDOMU='$Numerdomu' && NUMERMIESZKANIA='$Numermieszkania' ;");
+	 mysqli_query($sq,"Update kontrahenci SET NAZWA='Usunięty' Where NIP='$NIP' && REGON='$REGON' && CZYPŁATNIKVAT='Nie' && ULICA='$Ulica' && NUMERDOMU='$Numerdomu' && NUMERMIESZKANIA='$Numermieszkania' ;");
    }
  }
   mysqli_close($sq);
