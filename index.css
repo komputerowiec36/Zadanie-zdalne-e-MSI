@@ -1,21 +1,13 @@
 * {
   box-sizing: border-box;
 }
-.responsive-iframe {
-  float:right;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-}
+
 #lewy
 {
   float:left;
   border: 6px #0099CC solid;
   background-color:#ccccff;
-  font-size:45px;
+  font-size:35px;
   width: 25%;
   height: 100%;
 }
