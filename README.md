@@ -1,1 +1,1 @@
-# Projekt na rekrutacje w E-MSI
+# Projekt na rekrutacje polepszony
